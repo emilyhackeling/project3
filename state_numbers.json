@@ -1,0 +1,214 @@
+{
+  "Document": {
+    "Row": [
+      {
+        "State": "Alabama",
+        "Number_Farmers": "140"
+      },
+      {
+        "State": "Alaska",
+        "Number_Farmers": "31"
+      },
+      {
+        "State": "Arizona",
+        "Number_Farmers": "81"
+      },
+      {
+        "State": "Arkansas",
+        "Number_Farmers": "92"
+      },
+      {
+        "State": "California",
+        "Number_Farmers": "759"
+      },
+      {
+        "State": "Colorado",
+        "Number_Farmers": "157"
+      },
+      {
+        "State": "Connecticut",
+        "Number_Farmers": "156"
+      },
+      {
+        "State": "Delaware",
+        "Number_Farmers": "29"
+      },
+      {
+        "State": "DC",
+        "Number_Farmers": "35"
+      },
+      {
+        "State": "Florida",
+        "Number_Farmers": "224"
+      },
+      {
+        "State": "Georgia",
+        "Number_Farmers": "138"
+      },
+      {
+        "State": "Hawaii",
+        "Number_Farmers": "95"
+      },
+      {
+        "State": "Idaho",
+        "Number_Farmers": "69"
+      },
+      {
+        "State": "Illinois",
+        "Number_Farmers": "336"
+      },
+      {
+        "State": "Indiana",
+        "Number_Farmers": "171"
+      },
+      {
+        "State": "Iowa",
+        "Number_Farmers": "229"
+      },
+      {
+        "State": "Kansas",
+        "Number_Farmers": "92"
+      },
+      {
+        "State": "Kentucky",
+        "Number_Farmers": "131"
+      },
+      {
+        "State": "Louisiana",
+        "Number_Farmers": "66"
+      },
+      {
+        "State": "Maine",
+        "Number_Farmers": "93"
+      },
+      {
+        "State": "Maryland",
+        "Number_Farmers": "147"
+      },
+      {
+        "State": "Massachusetts",
+        "Number_Farmers": "289"
+      },
+      {
+        "State": "Michigan",
+        "Number_Farmers": "330"
+      },
+      {
+        "State": "Minnesota",
+        "Number_Farmers": "186"
+      },
+      {
+        "State": "Mississippi",
+        "Number_Farmers": "82"
+      },
+      {
+        "State": "Missouri",
+        "Number_Farmers": "246"
+      },
+      {
+        "State": "Montana",
+        "Number_Farmers": "66"
+      },
+      {
+        "State": "Nebraska",
+        "Number_Farmers": "93"
+      },
+      {
+        "State": "Nevada",
+        "Number_Farmers": "46"
+      },
+      {
+        "State": "New Hampshire",
+        "Number_Farmers": "96"
+      },
+      {
+        "State": "New Jersey",
+        "Number_Farmers": "139"
+      },
+      {
+        "State": "New Mexico",
+        "Number_Farmers": "69"
+      },
+      {
+        "State": "New York",
+        "Number_Farmers": "637"
+      },
+      {
+        "State": "North Carolina",
+        "Number_Farmers": "229"
+      },
+      {
+        "State": "North Dakota",
+        "Number_Farmers": "63"
+      },
+      {
+        "State": "Ohio",
+        "Number_Farmers": "300"
+      },
+      {
+        "State": "Oklahoma",
+        "Number_Farmers": "69"
+      },
+      {
+        "State": "Oregon",
+        "Number_Farmers": "173"
+      },
+      {
+        "State": "Pennsylvania",
+        "Number_Farmers": "290"
+      },
+      {
+        "State": "Rhode Island",
+        "Number_Farmers": "57"
+      },
+      {
+        "State": "South Carolina",
+        "Number_Farmers": "127"
+      },
+      {
+        "State": "South Dakota",
+        "Number_Farmers": "38"
+      },
+      {
+        "State": "Tenneessee",
+        "Number_Farmers": "99"
+      },
+      {
+        "State": "Texas",
+        "Number_Farmers": "183"
+      },
+      {
+        "State": "Utah",
+        "Number_Farmers": "40"
+      },
+      {
+        "State": "Vermont",
+        "Number_Farmers": "100"
+      },
+      {
+        "State": "Virgin Islands",
+        "Number_Farmers": "4"
+      },
+      {
+        "State": "Virginia",
+        "Number_Farmers": "246"
+      },
+      {
+        "State": "Washington",
+        "Number_Farmers": "159"
+      },
+      {
+        "State": "West Virginia",
+        "Number_Farmers": "90"
+      },
+      {
+        "State": "Wisconsin",
+        "Number_Farmers": "286"
+      },
+      {
+        "State": "Wyoming",
+        "Number_Farmers": "41"
+      }
+    ]
+  }
+}

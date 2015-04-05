@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+
+    
+<head>	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <link href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js" ></script>
+    <link href="http:///cdn.datatables.net/responsive/1.0.4/css/dataTables.responsive.css" rel="stylesheet"></link>
+    <script src="http://cdn.datatables.net/responsive/1.0.4/js/dataTables.responsive.js" ></script>
+    <link href="tipr/tipr.css" rel="stylesheet"></link>
+    <script src="tipr/tipr.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"></link>
+
+<script type="text/javascript">
+	
+    var theState =[];
+    var Number_Farmers =[];
+    
+   
+    
+$(document).ready(function()
+      {
+
+        $.ajax({
+		type: "GET",
+		url: "state_numbers.xml",
+		dataType: "xml",
+		success: parseXML
+		});
+		
+
+    function parseXML(xml) {
+                    
+            
+        $(xml).find('Row').each(function(){
+            //console.log("once for every person");
+            var $row = $(this); 
+            theState.push($row.find('State').text());
+	    Number_Farmers.push(parseInt($row.find('Number_Farmers').text()));
+
+        });
+	console.log(theState);
+
+	buildChart();
+	
+    }
+	
+
+    function buildChart(){	
+	$('#chart').highcharts({
+	    colors: ['#9C1E32', '#6E1523', '#470E17', '#EB2D4B'],
+        chart: {
+            renderTo: 'chart',
+            type: 'line'
+	   
+        },
+        title: {
+            text: 'Number of Farmers Markets in Each State'
+        },
+        xAxis: {
+             title: {
+                text: 'State'},
+	     categories: theState
+        },
+        yAxis: {
+            title: {
+                text: 'Amount'
+            }
+        },
+        series: [{
+            name: 'Amount in Each State',
+            data: Number_Farmers
+	     }]
+	});
+	
+    }
+	
+	
+
+	$('#chart2').highcharts({
+		   colors: ['#9C1E32', '#6E1523', '#470E17', '#EB2D4B'],
+		   chart: {
+		       plotBackgroundColor: null,
+		       plotBorderWidth: null,
+		       plotShadow: false
+		   },
+		   title: {
+		       text: 'Products Bought at Farmers Markets'
+		   },
+		   tooltip: {
+		       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		   },
+		   plotOptions: {
+		       pie: {
+			   allowPointSelect: true,
+			   cursor: 'pointer',
+			   dataLabels: {
+			       enabled: false
+			   },
+			   showInLegend: true
+		       }
+		   },
+		   series: [{
+		       type: 'pie',
+		       name: 'Percent of Goods Sold',
+		       data: [
+			   
+			   ['Fruit',       25.6],
+			   {
+			       name: 'Bread',
+			       y: 10.7,
+			       sliced: true,
+			       selected: true
+			   },
+			   ['Vegetables',    45.3],
+			   ['Other',   18.4],
+			   
+		       ]
+		   }]
+		   
+    
+	       });
+
+
+
+
+	
+	
+	
+	 $('#table').DataTable( {
+	     "ajax": 'new_table.json',
+	    ordering: true,
+	    searching: true,
+	    lengthChange: true,
+	    pagination: true,
+	    info: true,
+	    responsive: true
+	    
+	    
+	 });
+	
+	
+	
+});
+
+
+
+</script>
+
+</head>
+<body>
+<div class ="container">
+    <div class="head">
+	<div id="tinynav">
+	    <ul>
+		<li><a href="#">Real Estate</a></li>
+		<li><a href="#">Rentals</a></li>
+		<li><a href="#">Cars</a></li>
+		<li><a href="#">Today's Paper</a></li>
+		<li><a href="#">Going Out Guide</a></li>
+		<li><a href="#">Find&Save</a></li>
+	    </ul>
+	</div>
+	<div id="navcontainer">
+	    <ul>
+		<li><a href="#">PostTV</a></li>
+		<li><a href="#">Politics</a></li>
+		<li><a href="#">Opinions</a></li>
+		<li><a href="#">Local</a></li>
+		<li><a href="#">Sports</a></li>
+		<li><a href="#">Nation</a></li>
+		<li><a href="#">World</a></li>
+		<li><a href="#">Business</a></li>
+		<li><a href="#">Tech</a></li>
+		<li><a href="#">Lifestyle</a></li>
+		<li><a href="#">Entertainment</a></li>
+		<li><a href="#">Jobs</a></li>
+		<li><a href="#">Cars</a></li>
+		<li><a href="#">More</a></li>
+	    </ul>
+	</div>
+	<div class="nav col-md-12">
+            <img src="assets/logo.png" alt="nav top" style="width:102%"></img>
+        </div>
+    </div>
+
+    	       <div class="whole_top">
+		<div class="row">
+		    <a href="#"><span class="top_label"> Community </span></a>
+		    <h1>The US Farmers Market Boom</h1>
+		    <div class="byline">By
+			<a href="#"><span class="blue_name">Emily Hackeling</span></a>
+			<span class="date">March 31 </span>
+		    </div>
+		    <div class="social">
+			<ul class="soc">
+			    <li><a class="soc-twitter" href="#"></a></li>
+			    <li><a class="soc-facebook" href="#"></a></li>
+			    <li><a class="soc-google" href="#"></a></li>
+			    <li><a class="soc-pinterest" href="#"></a></li>
+			    <li><a class="soc-linkedin" href="#"></a></li>
+			    <li><a class="soc-rss soc-icon-last" href="#"></a></li>
+			</ul>
+		    </div>
+		</div>
+		</div>
+
+	<div class="row">
+	    <div class="real_content col-md-9 col-sm-12 col-xs-12">
+	        <div class="border" >
+		<div class="intro">
+		    More than 6,000 new farmers markets have been newly listed in the USDA directory over the past twenty years in what farmers call the "Farmers Market Boom." This explosion in the number of markets came as a result of the local food movement, the desire to support local business in a struggling economy and a surge in community-building efforts across the nation. There are more than 8,100 farmers markets listed in the USDA National Farmers Market Directory in 2015.
+		    From 2012 to 2013, the number of markets increased by 3.6 percent, while growth from 2012 was 10 percent and 17 percent in 2011. 
+		</div>
+		
+		
+		<h3>Find A Farmers Market</h3>
+		<table id="table" class="display" data-order='[[ 1, "asc" ]]' data-page-length='25' cellspacing='0'>
+		    <thead>
+		     <tr>
+			<th>Name</th>
+			<th>City</th>
+			<th>State</th>
+		    </tr>
+		    </thead>
+		    <tbody>
+		     <tr>
+			<td></td>
+			<td></td>
+		     </tr>
+		    </tbody>
+		</table>
+		</div>
+		
+		
+		<div class="intro two">
+		    USDA has found there are more farmers markets in the states that produce the most fruits and vegetables. California is the top producer of vegetables in the US, and there are more than 750 registered markets throughout the state. 
+		</div>
+		<div id="chart" style="width:100%;"></div>
+		
+		
+		     <div class="intro two"> Farmers markets have branched out from just selling farm-grown products. Most now include pottery, homemade gifts or art. Vegetables remain the most popular items bought at markets, followed by fruits. </div>
+		    <div id="chart2" style="width:100%;"></div>
+		
+		
+		
+		<div class="row all_products">
+		    <h3>US Agricultural Production </h3>
+		    <div class="intro two">Of the United States' more than 2 million farms, more than 97 percent are operated by families, including individuals, family corporations or partnerships. Hover to learn more about US agricultural production</div>
+		    <div class="product col-md-4">
+			<h4>Wheat</h4>
+			<img src="css/bread.png" alt="bread" style="width: 100%; padding-bottom:60px" >
+			    <table class="product_table" style="width:100%" >
+				<tr>
+				  <td>Rank</td>
+				  <td><span class="small">5th in the world</span></td> 
+				</tr>
+				<tr>
+				  <td>Production</td>
+				  <td><span class="small">42 states</span></td> 
+				</tr>
+				<tr>
+				  <td>Consumption</td>
+				  <td><span class="small">1.2 billion bushels/yr</span></td> 
+				</tr>
+			    </table>
+			</img>
+		    </div>
+		
+		    <div class="product_2 col-md-4">
+			<h4>Apples</h4>
+			<img src="css/fruit.png" alt="fruit" style="width: 100%; padding-bottom:30px">
+			     <table class="product_2_table" style="width:100%" >
+				<tr>
+				  <td>Rank</td>
+				  <td><span class="small">2nd in the world</span></td> 
+				</tr>
+				<tr>
+				  <td>Production</td>
+				  <td><span class="small">32 states</span></td> 
+				</tr>
+				<tr>
+				  <td>Consumption</td>
+				  <td><span class="small">250 million cartons/yr</span></td> 
+				</tr>
+			    </table>
+			</img>
+		    </div>
+		    <div class="product_3 col-md-4">
+			<h4>Vegetables</h4>
+			<img src="css/veggie.png" alt="veggie" style="width: 100%; padding-bottom:85px" >
+			    <table class="product_3_table" style="width:100%" >
+				<tr>
+				  <td>Rank</td>
+				  <td><span class="small">3rd in the world</span></td> 
+				</tr>
+				<tr>
+				  <td>Production</td>
+				  <td><span class="small">45 states</span></td> 
+				</tr>
+				<tr>
+				  <td>Consumption</td>
+				  <td><span class="small">40 million tons/yr</span></td> 
+				</tr>
+			    </table>
+			</img>
+		    </div>
+		</div>
+		
+		
+	    </div>
+	    <div class= "sidebar col-md-3 hidden-sm hidden-xs">
+		<a href="#"><img src="assets/sidebar.png" alt="ad"></img></a>
+		<a href="#"><img src="assets/ad2.png" alt="ad"></img></a>
+	    </div>
+	
+
+	 </div>
+
+
+<div class="footer">
+    
+    <div id="navcontainer_bottom">
+	    <ul>
+		<li><a href="#">PostTV</a></li>
+		<li><a href="#">Politics</a></li>
+		<li><a href="#">Opinions</a></li>
+		<li><a href="#">Local</a></li>
+		<li><a href="#">Sports</a></li>
+		<li><a href="#">Nation</a></li>
+		<li><a href="#">World</a></li>
+		<li><a href="#">Business</a></li>
+		<li><a href="#">Tech</a></li>
+		<li><a href="#">Lifestyle</a></li>
+		<li><a href="#">Entertainment</a></li>
+		<li><a href="#">Jobs</a></li>
+		<li><a href="#">Cars</a></li>
+		<li><a href="#">More</a></li>
+	    </ul>
+	</div>
+    <span class="credits">
+	Sources: USNews http://www.usnews.com/news/articles/2013/08/07/farmers-market-boom-is-leveling-off
+    </span>	
+    <span class="credits">
+	http://catalog.data.gov/dataset/farmers-markets-geographic-data
+    </span>
+    <span class="credits">	
+	http://usapple.org
+    </span>
+    
+    
+</div>
+
+
+</div>		
+
+</body>
+
+
+
+
+
+</html>
